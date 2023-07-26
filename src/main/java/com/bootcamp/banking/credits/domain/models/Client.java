@@ -2,7 +2,6 @@ package com.bootcamp.banking.credits.domain.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 public class Client {

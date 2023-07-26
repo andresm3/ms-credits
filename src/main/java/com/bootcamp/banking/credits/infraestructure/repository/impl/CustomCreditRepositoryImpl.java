@@ -4,7 +4,6 @@ import static org.springframework.data.mongodb.core.query.Criteria.where;
 
 import com.bootcamp.banking.credits.domain.models.Credit;
 import com.bootcamp.banking.credits.infraestructure.repository.CustomCreditRepository;
-import java.time.LocalDate;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.ReactiveMongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;

@@ -39,7 +39,7 @@ public class CreditUseCasesImpl implements CreditUseCases {
             .flatMap(a -> creditRepository.save(a)
                 .map(b -> {
 
-                  System.out.println(">>Created a new id = {} for the account with number=> Saving "+ b.getLoanDebt());
+                  System.out.println(">>Created a new id = {} for the account with number=> Saving " + b.getLoanDebt());
                   return b;
                 })));
   }
@@ -72,7 +72,7 @@ public class CreditUseCasesImpl implements CreditUseCases {
 
   @Override
   public Mono<Credit> checkIfClientOwnsCreditCard(String documentNumber) {
-    System.out.println("checkIfClientOwnsCreditCard: "+ documentNumber);
+    System.out.println("checkIfClientOwnsCreditCard: " + documentNumber);
     return creditRepository
         .findByClientDocumentNumberAndCreditType(documentNumber, Constants.CreditType.CARD)
         .switchIfEmpty(Mono.empty());
@@ -108,7 +108,7 @@ public class CreditUseCasesImpl implements CreditUseCases {
   }
 
   private BigDecimal isExpired(LoanDebt loanDebt) {
-    if(loanDebt!= null && loanDebt.getExpirationDate().isAfter(LocalDate.now()) && loanDebt.getStatus() == 1 ){
+    if (loanDebt != null && loanDebt.getExpirationDate().isAfter(LocalDate.now()) && loanDebt.getStatus() == 1) {
       System.out.println("isExpired: 1");
       return new BigDecimal(1);
     }

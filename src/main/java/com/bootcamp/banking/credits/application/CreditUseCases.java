@@ -1,6 +1,5 @@
 package com.bootcamp.banking.credits.application;
 
-import com.bootcamp.banking.credits.domain.dto.CreditRequest;
 import com.bootcamp.banking.credits.domain.models.Credit;
 import java.math.BigDecimal;
 import reactor.core.publisher.Flux;

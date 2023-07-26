@@ -1,9 +1,8 @@
 package com.bootcamp.banking.credits.infraestructure.rest;
 
 import com.bootcamp.banking.credits.application.CreditUseCases;
-import com.bootcamp.banking.credits.domain.dto.CreditRequest;
 import com.bootcamp.banking.credits.domain.models.Credit;
-import jakarta.validation.Valid;
+
 import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
