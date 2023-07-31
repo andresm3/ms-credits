@@ -38,7 +38,7 @@ public class CreditResource {
   public Mono<Credit> findById(@PathVariable String id) {
     return creditUseCases.getCreditById(id);
   }
-  @GetMapping("/productId/{number}")
+  @GetMapping("/number/{number}")
   public Mono<Credit> searchCreditByNumber(@PathVariable("number") String number) {
     return creditUseCases.getCreditByNumber(number);
   }

@@ -11,6 +11,7 @@ import org.springframework.data.mongodb.core.mapping.FieldType;
 public class Credit {
 
   private String id;
+  private String number;
   private String creditCard;
   private String productId;
   private Client client;

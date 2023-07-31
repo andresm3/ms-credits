@@ -22,7 +22,7 @@ public class CreditUseCasesImpl implements CreditUseCases {
   @Override
   public Mono<Credit> createCredit(Credit credit) {
     System.out.println(">>CreditUseCasesImpl=> createCredit");
-    return creditRepository.findByProductId(credit.getProductId())
+    return creditRepository.findByNumber(credit.getProductId())
         .doOnNext(a -> Mono.error(new CustomInformationException("Credit number has already been created")))
         .switchIfEmpty(creditRepository
             .countByClientDocumentNumber(credit.getClient().getDocumentNumber())
@@ -55,7 +55,7 @@ public class CreditUseCasesImpl implements CreditUseCases {
 
   @Override
   public Mono<Credit> getCreditByNumber(String number) {
-    return creditRepository.findByProductId(number)
+    return creditRepository.findByNumber(number)
         .switchIfEmpty(Mono
             .error(new CustomNotFoundException(Constants.CreditErrorMsg.MONO_NOT_FOUND_MESSAGE)));
 
